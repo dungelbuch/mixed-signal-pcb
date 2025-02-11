@@ -1,0 +1,14 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "851fd0bf-5285-448c-8331-4e7932106507")
+	(paper "A4")
+	(title_block
+		(title "Micro Controller Unit")
+		(date "2025-02-11")
+		(rev "0.1")
+		(company "Le Quoc Dung")
+	)
+	(lib_symbols)
+)

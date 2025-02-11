@@ -1,0 +1,13 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "90af2997-18a7-406e-918c-a64c8cc02593")
+	(paper "A4")
+	(title_block
+		(title "Digital-Analog-Converter")
+		(date "2025-02-11")
+		(rev "0.1")
+	)
+	(lib_symbols)
+)

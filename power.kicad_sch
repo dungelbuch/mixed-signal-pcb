@@ -1,0 +1,14 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "6e7a52dd-2722-44bf-ac27-6430dd2e21c1")
+	(paper "A4")
+	(title_block
+		(title "Power Circuit")
+		(date "2025-02-11")
+		(rev "0.1")
+		(company "Le Quoc Dung")
+	)
+	(lib_symbols)
+)
