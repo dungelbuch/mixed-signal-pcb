@@ -1,0 +1,18 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "eba96202-8ea2-41d9-8d7a-700a4166585a")
+	(paper "A4")
+	(title_block
+		(title "Mixed-Signal PCB Learning Project")
+		(date "2025-02-11")
+		(rev "0.1")
+	)
+	(lib_symbols)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)
