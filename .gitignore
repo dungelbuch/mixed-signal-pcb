@@ -1,2 +1,5 @@
 # Ignore backup folder
 /mixed_signal_hardware_design-backups
+
+# Ignore MacOS .DS_Store 
+.DS_Store
