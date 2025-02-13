@@ -31,7 +31,7 @@ Here we can refine the system requirements from the characteristics above:
 
 ### System Block Diagram
 
-![System Block Diagram](/img/system_diagram.jpeg)
+![System Block Diagram](/notes/img/system_diagram.jpeg)
 
 Futher considerations:
 
@@ -159,4 +159,4 @@ frequency of half the DAC's sampling frequency is required.
 With the above requirements in mind, we can now create a more detailed system
 diagram.
 
-![Detailed System Diagram](/img/detailted_system_diagram.jpeg)
+![Detailed System Diagram](/notes/img/detailted_system_diagram.jpeg)
