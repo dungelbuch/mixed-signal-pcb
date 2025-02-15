@@ -1,4 +1,4 @@
-# System-Level Design
+# 1. System-Level Design
 
 In this project the goal is to design a system with the following
 characteristics:
