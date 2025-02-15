@@ -1,0 +1,52 @@
+# Power Supply Design
+
+The power supply consist of an input filter, analog and digital power supplies, and a biasing circuit. The input filter
+is a simple LC filter that filters out high frequency noise from the input power supply. The analog power supply is a
+linear regulator that provides a stable 3.3V supply for the analog components. The digital power supply is a buck
+converter that provides a stable 3.3V supply for the digital components. The biasing circuit provides a stable 1.2V
+supply for the biasing circuit.
+
+The following sections will describe the design considerations for the placements and values of the secondary components
+of the power supply.
+
+## Input Filter
+
+The inductor has a DC current rating of 500 mA, which matches the maximum current that a USB connection can provide. It is important to specify an inductor with a higher current rating than the expected operating current to ensure reliability and minimize saturation effects. Although the inductor will typically draw much less current (100 mA – 200 mA) during normal operation, the higher rating provides a safety margin, ensuring stable performance under varying load conditions.
+
+The inductor has a value of **10 µH** and a **DC resistance of 0.15 Ω**. Without additional damping, the filter essentially forms a **resonant circuit**, which can introduce an undesirable peak at the resonant frequency. The **resonant frequency** is given by:  
+
+$$f_0 = \frac{1}{2\pi\sqrt{LC}}$$
+
+where:  
+- $f_0$ is the resonant frequency,  
+- $L$ is the inductance,  
+- $C$ is the capacitance.  
+
+To suppress resonance and prevent excessive peaking, **damping** can be introduced in two ways:  
+- **Adding a series resistor** with the inductor to dissipate energy and reduce the Q-factor of the circuit.  
+- **Relying on the inductor's inherent DC resistance** (0.15 Ω) to provide some degree of damping.  
+
+The choice between these approaches depends on the required trade-off between damping effectiveness and power loss. If additional damping is necessary, selecting an appropriately sized resistor can help achieve a critically or optimally damped response without significantly increasing losses.
+
+To determine the values for the input filter, we can use this [online tool](http://sim.okawa-denshi.jp/en/Fkeisan.htm), which provides various resources for visualizing the frequency response of different filter types. For our specific case, we will use the [RLC filter calculator](http://sim.okawa-denshi.jp/en/RLCtool.php).  
+
+Using the given component values:  
+
+- **Inductance**: $L = 10 \,\mu H$  
+- **Capacitance**: $C = 10 \,\mu F$  
+- **Resistance**: $R = 0.15 \,\Omega$  
+
+The resulting filter has a **cutoff frequency of approximately 1.6 MHz**. The low-pass filter's **passband extends from 0 Hz to roughly 1 MHz**, effectively attenuating higher frequencies beyond this range.
+
+![RLC Magnitude Spectrum](/notes/img/magnitude_rlc_filter.png)
+
+This filter attenuates high-frequency noise from the input power supply. Since our design does not operate at high
+frequencies, this filter is sufficient, as it effectively removes unwanted noise while maintaining the necessary
+bandwidth for proper operation.
+
+![RLC Magnitude Spectrum Peak](/notes/img/magnitude_rlc_filter_peak.png)
+
+If we design the filter without any damping, we can observe the resonant peak in the frequency response as seen above. This peak can
+cause instability and unwanted oscillations in the system. 
+
+
