@@ -11,6 +11,184 @@
 		(company "Le Quoc Dung")
 	)
 	(lib_symbols
+		(symbol "Amplifier_Operational:MCP6001-OT"
+			(pin_names
+				(offset 0.127)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -1.27 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "MCP6001-OT"
+				(at -1.27 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+				(at -2.54 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "1MHz, Low-Power Op Amp, SOT-23-5"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "single opamp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MCP6001-OT_0_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "MCP6001-OT_1_1"
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -906,227 +1084,6 @@
 				)
 			)
 		)
-		(symbol "bias_generator_microchip:MCP6001T-E_OT"
-			(pin_names
-				(offset 0.254)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 17.78 -5.08 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Value" "MCP6001T-E/OT"
-				(at 28.956 3.556 0)
-				(effects
-					(font
-						(size 1.524 1.524)
-					)
-				)
-			)
-			(property "Footprint" "SOT-23-5_MC_MCH"
-				(at 3.048 10.414 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "MCP6001T-E/OT"
-				(at 4.064 7.366 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "MCP6001T-E/OT"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT-23-5_MC_MCH SOT-23-5_MC_MCH-M SOT-23-5_MC_MCH-L"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "MCP6001T-E_OT_0_1"
-				(polyline
-					(pts
-						(xy 11.43 -10.16) (xy 24.13 -10.16)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 11.43 0) (xy 11.43 -10.16)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 24.13 -10.16) (xy 24.13 0)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 24.13 0) (xy 11.43 0)
-					)
-					(stroke
-						(width 0.127)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "MCP6001T-E_OT_1_1"
-				(pin output line
-					(at 26.67 -5.08 180)
-					(length 2.54)
-					(name "V_{OUT}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 17.78 -12.7 90)
-					(length 2.54)
-					(name "V_{SS}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 8.89 -2.54 0)
-					(length 2.54)
-					(name "V_{IN}+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 8.89 -7.62 0)
-					(length 2.54)
-					(name "V_{IN}-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 17.78 2.54 270)
-					(length 2.54)
-					(name "V_{DD}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "power:+3.3VA"
 			(power)
 			(pin_numbers hide)
@@ -1699,12 +1656,6 @@
 		(uuid "03684c63-a4a3-4312-a8c1-68f550505dce")
 	)
 	(junction
-		(at 247.65 55.88)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "03d0af73-6f7a-4245-bea3-748763de1e1c")
-	)
-	(junction
 		(at 147.32 132.08)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1747,6 +1698,18 @@
 		(uuid "2b78d810-4b1b-455e-865f-6fec57492415")
 	)
 	(junction
+		(at 243.84 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3e776297-a713-4081-9b75-7c8f738c32ac")
+	)
+	(junction
+		(at 265.43 68.58)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "48f63214-a9c0-4a2e-82af-407c4211ddcb")
+	)
+	(junction
 		(at 78.74 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1775,12 +1738,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9e2f157e-439a-486b-ba7c-ad8e5bed4c11")
-	)
-	(junction
-		(at 270.51 68.58)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a3adf6cd-9608-4746-be67-e2d70af3c11f")
 	)
 	(junction
 		(at 124.46 77.47)
@@ -1866,7 +1823,7 @@
 	)
 	(wire
 		(pts
-			(xy 270.51 86.36) (xy 238.76 86.36)
+			(xy 265.43 87.63) (xy 238.76 87.63)
 		)
 		(stroke
 			(width 0)
@@ -1976,13 +1933,13 @@
 	)
 	(wire
 		(pts
-			(xy 256.54 68.58) (xy 270.51 68.58)
+			(xy 254 68.58) (xy 265.43 68.58)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "406e69aa-29ba-460a-92d8-306c89e11726")
+		(uuid "3e964322-d007-49e2-8266-796fa379065a")
 	)
 	(wire
 		(pts
@@ -2056,7 +2013,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 55.88) (xy 247.65 55.88)
+			(xy 237.49 55.88) (xy 243.84 55.88)
 		)
 		(stroke
 			(width 0)
@@ -2096,7 +2053,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 55.88) (xy 233.68 55.88)
+			(xy 227.33 55.88) (xy 229.87 55.88)
 		)
 		(stroke
 			(width 0)
@@ -2106,7 +2063,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 55.88) (xy 247.65 60.96)
+			(xy 243.84 55.88) (xy 243.84 60.96)
 		)
 		(stroke
 			(width 0)
@@ -2153,16 +2110,6 @@
 			(type default)
 		)
 		(uuid "623cb8a6-6a65-4e8d-86ba-94dc991e4459")
-	)
-	(wire
-		(pts
-			(xy 247.65 76.2) (xy 247.65 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "63d52ed9-d560-4ce4-889b-6df226628fdb")
 	)
 	(wire
 		(pts
@@ -2213,6 +2160,16 @@
 			(type default)
 		)
 		(uuid "6e79766e-3ea7-42b6-8f4a-a0b1030165ba")
+	)
+	(wire
+		(pts
+			(xy 265.43 68.58) (xy 265.43 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "713ee973-dcf0-418c-8262-3fa5316bcd90")
 	)
 	(wire
 		(pts
@@ -2336,16 +2293,6 @@
 	)
 	(wire
 		(pts
-			(xy 270.51 68.58) (xy 270.51 86.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a973de41-61f2-4665-8f68-74f58bdee3e7")
-	)
-	(wire
-		(pts
 			(xy 78.74 121.92) (xy 78.74 118.11)
 		)
 		(stroke
@@ -2356,7 +2303,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 49.53) (xy 247.65 55.88)
+			(xy 243.84 49.53) (xy 243.84 55.88)
 		)
 		(stroke
 			(width 0)
@@ -2446,7 +2393,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 86.36) (xy 238.76 71.12)
+			(xy 238.76 87.63) (xy 238.76 71.12)
 		)
 		(stroke
 			(width 0)
@@ -2456,7 +2403,7 @@
 	)
 	(wire
 		(pts
-			(xy 270.51 68.58) (xy 270.51 66.04)
+			(xy 265.43 68.58) (xy 265.43 66.04)
 		)
 		(stroke
 			(width 0)
@@ -2588,7 +2535,7 @@
 	)
 	(rectangle
 		(start 208.28 40.64)
-		(end 276.86 92.71)
+		(end 273.05 92.71)
 		(stroke
 			(width 0)
 			(type default)
@@ -2783,7 +2730,7 @@
 		(effects
 			(font
 				(size 2.5 2.5)
-				(thickness 0.254)
+				(thickness 0.5)
 				(bold yes)
 			)
 		)
@@ -2994,6 +2941,83 @@
 			(project ""
 				(path "/eba96202-8ea2-41d9-8d7a-700a4166585a/9e6a3319-b22e-494d-bd14-b1d6263414e0"
 					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Amplifier_Operational:MCP6001-OT")
+		(at 246.38 68.58 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2876e26a-96e0-4a31-be95-d69e2acc9456")
+		(property "Reference" "U3"
+			(at 249.174 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MCP6001T-E/OT"
+			(at 255.27 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+			(at 243.84 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ww1.microchip.com/downloads/en/DeviceDoc/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf"
+			(at 246.38 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1MHz, Low-Power Op Amp, SOT-23-5"
+			(at 246.38 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "cb3b1951-89b1-4d03-a449-e8115da53395")
+		)
+		(pin "1"
+			(uuid "5ca6f810-715c-476e-a7f0-d5a89dbcce85")
+		)
+		(pin "3"
+			(uuid "85b5bdf9-7f95-4ef9-9e76-06fd7088b38e")
+		)
+		(pin "4"
+			(uuid "c9ac3e81-9fa1-4790-9d4b-e6d7bae60d21")
+		)
+		(pin "5"
+			(uuid "3bbc13e4-fcd5-4b65-bccf-9397b4867d05")
+		)
+		(instances
+			(project ""
+				(path "/eba96202-8ea2-41d9-8d7a-700a4166585a/9e6a3319-b22e-494d-bd14-b1d6263414e0"
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -3344,7 +3368,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 237.49 55.88 90)
+		(at 233.68 55.88 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3352,7 +3376,7 @@
 		(dnp no)
 		(uuid "5d2970b6-9e4c-469f-bcbb-2b3f0f8c9bf5")
 		(property "Reference" "C9"
-			(at 237.49 48.514 90)
+			(at 233.68 48.514 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3360,7 +3384,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 237.49 51.054 90)
+			(at 233.68 51.054 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3368,7 +3392,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 241.3 54.9148 0)
+			(at 237.49 54.9148 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3377,7 +3401,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 237.49 55.88 0)
+			(at 233.68 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3386,7 +3410,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 237.49 55.88 0)
+			(at 233.68 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4039,84 +4063,6 @@
 		)
 	)
 	(symbol
-		(lib_id "bias_generator_microchip:MCP6001T-E_OT")
-		(at 229.87 63.5 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8ebbe227-e375-4b74-839f-f20b6bec00c2")
-		(property "Reference" "U3"
-			(at 250.952 61.214 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Value" "MCP6001T-E/OT"
-			(at 258.826 75.692 0)
-			(effects
-				(font
-					(size 1.524 1.524)
-				)
-			)
-		)
-		(property "Footprint" "SOT-23-5_MC_MCH"
-			(at 232.918 53.086 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "MCP6001T-E/OT"
-			(at 233.934 56.134 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 229.87 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "4"
-			(uuid "23afb96d-226e-4aab-9a8b-c3fcaa255c46")
-		)
-		(pin "5"
-			(uuid "239b32a4-f8e5-4014-b817-eb04d0204d7e")
-		)
-		(pin "2"
-			(uuid "92b6b759-fe05-41e9-a79b-3c926fa024d9")
-		)
-		(pin "1"
-			(uuid "52067db6-be18-408e-b7c3-c1e6dae4da10")
-		)
-		(pin "3"
-			(uuid "24eb5ebe-a3a0-408a-9c82-02b478d516f0")
-		)
-		(instances
-			(project ""
-				(path "/eba96202-8ea2-41d9-8d7a-700a4166585a/9e6a3319-b22e-494d-bd14-b1d6263414e0"
-					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 214.63 73.66 0)
 		(unit 1)
@@ -4456,7 +4402,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3VA")
-		(at 247.65 49.53 0)
+		(at 243.84 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4464,7 +4410,7 @@
 		(dnp no)
 		(uuid "b5bfa2e9-5199-4915-bba4-7ed2a29ca84f")
 		(property "Reference" "#PWR011"
-			(at 247.65 53.34 0)
+			(at 243.84 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4473,7 +4419,7 @@
 			)
 		)
 		(property "Value" "+3.3VA"
-			(at 247.65 44.958 0)
+			(at 243.84 44.958 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4481,7 +4427,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 247.65 49.53 0)
+			(at 243.84 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4490,7 +4436,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 247.65 49.53 0)
+			(at 243.84 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4499,7 +4445,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3VA\""
-			(at 247.65 49.53 0)
+			(at 243.84 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4521,7 +4467,7 @@
 	)
 	(symbol
 		(lib_id "power:VCOM")
-		(at 270.51 66.04 0)
+		(at 265.43 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4530,7 +4476,7 @@
 		(fields_autoplaced yes)
 		(uuid "c02e770c-3af2-4b28-805f-bceb81cfd242")
 		(property "Reference" "#PWR013"
-			(at 270.51 69.85 0)
+			(at 265.43 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4539,7 +4485,7 @@
 			)
 		)
 		(property "Value" "VCOM"
-			(at 270.51 60.96 0)
+			(at 265.43 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4547,7 +4493,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 270.51 66.04 0)
+			(at 265.43 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4556,7 +4502,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 270.51 66.04 0)
+			(at 265.43 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4565,7 +4511,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCOM\""
-			(at 270.51 66.04 0)
+			(at 265.43 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4927,7 +4873,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 247.65 78.74 0)
+		(at 243.84 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4936,7 +4882,7 @@
 		(fields_autoplaced yes)
 		(uuid "d8d373d1-f3bd-45bc-959b-4ad0e163d544")
 		(property "Reference" "#PWR012"
-			(at 247.65 85.09 0)
+			(at 243.84 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4945,7 +4891,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 247.65 83.82 0)
+			(at 243.84 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4953,7 +4899,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 247.65 78.74 0)
+			(at 243.84 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4962,7 +4908,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 247.65 78.74 0)
+			(at 243.84 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4971,7 +4917,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 247.65 78.74 0)
+			(at 243.84 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4993,7 +4939,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 231.14 55.88 0)
+		(at 227.33 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5002,7 +4948,7 @@
 		(fields_autoplaced yes)
 		(uuid "e3cc54d5-724d-40f7-aae9-5d1361c275ee")
 		(property "Reference" "#PWR015"
-			(at 231.14 62.23 0)
+			(at 227.33 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5011,7 +4957,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 231.14 60.96 0)
+			(at 227.33 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5019,7 +4965,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 231.14 55.88 0)
+			(at 227.33 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5028,7 +4974,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 55.88 0)
+			(at 227.33 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5037,7 +4983,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 231.14 55.88 0)
+			(at 227.33 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
