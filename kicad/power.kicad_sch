@@ -4056,7 +4056,7 @@
 			)
 		)
 		(property "Value" "MCP6001T-E/OT"
-			(at 258.572 75.946 0)
+			(at 258.826 75.692 0)
 			(effects
 				(font
 					(size 1.524 1.524)
