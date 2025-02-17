@@ -116,7 +116,7 @@ $$ V_{OUT} = V_{REF} \times \left(1 + \frac{R_1}{R_2}\right) = 0.6 \times \left(
 where:
 - $V_{OUT}$ = Desired output voltage
 - $V_{REF}$ = Reference voltage (given with 0.6 V)
-- $R_1 \& R_2$ = Feedback resistor 1 & 2
+- $R_1$ and $R_2$ = Feedback resistor 1 & 2
 
 To maintain a stable output voltage, it's essential to keep the reference voltage steady. To achieve this, we will use resistors with a tolerance
 of **1% or better**. The chosen values for the feedback resistors are **R1 = 100 kΩ** and **R2 = 22 kΩ**, which will provide a stable output
