@@ -32,8 +32,8 @@ To determine the values for the input filter, we can use this [online tool](http
 
 Using the given component values:  
 
-- **Inductance**: $L = 10 \,\mu H$  
-- **Capacitance**: $C = 10 \,\mu F$  
+- **Inductance**: $L = 10 \,\mu\text{H}$  
+- **Capacitance**: $C = 10 \,\mu\text{F}$  
 - **Resistance**: $R = 0.15 \,\Omega$  
 
 The resulting filter has a **cutoff frequency of approximately 1.6 MHz**. The low-pass filter's **passband extends from 0 Hz to roughly 1 MHz**, effectively attenuating higher frequencies beyond this range.
@@ -49,4 +49,84 @@ bandwidth for proper operation.
 If we design the filter without any damping, we can observe the resonant peak in the frequency response as seen above. This peak can
 cause instability and unwanted oscillations in the system. 
 
+## Analog Power Supply (LDO)
 
+According to the [HT7533-1 datasheet](/datasheet/ht75xx.pdf) , both the input and output capacitors must have a minimum capacitance of **10 µF**. In our design, we use **22 µF** capacitors for both, ensuring a margin above the requirement. Given a typical **20% tolerance**, the actual capacitance could drop to **18 µF**. Additionally, **DC bias effects** can further reduce the capacitance, reinforcing the need for a higher nominal value.  
+
+To further improve stability, we place a **10 Ω series resistor (1/8 W)** at the LDO input. With a maximum current of **100 mA**, the power dissipation is:  
+
+$$P = I^2 R = (0.1 A)^2 \times 10 Ω = 0.1\text{ W}$$  
+
+This resistor, together with the **input capacitor**, forms a **low-pass filter** that attenuates high-frequency noise from the shared digital power supply. The filter’s **cutoff frequency** is given by:  
+
+$$f_c = \frac{1}{2\pi R C}$$  
+
+Substituting the values **R = 10 Ω** and **C = 22 µF**, we obtain:  
+
+$$f_c \approx 723 \text{ Hz}$$
+
+This cutoff frequency effectively suppresses high-frequency noise, ensuring a clean power supply for the **low-frequency analog circuitry**, where noise sensitivity is critical.  
+
+## Digital Power Supply (Buck Converter)  
+
+The components required for the buck converter can be found in the [TLV62569 datasheet](/datasheet/tlv62569.pdf) and are summarized below:  
+
+- **Input capacitor(s)**  
+- **Output filter** (inductor and output capacitor(s))  
+- **Feedback network** (resistor divider)  
+
+### Inductor Selection  
+The inductor value is calculated using the formula:  
+
+$$
+L = \frac{V_{OUT} \times (V_{IN} - V_{OUT})}{f_s \times V_{IN} \times \Delta I_L}
+$$
+
+where:  
+- $L$ = Inductance  
+- $V_{OUT}$ = Output voltage  
+- $V_{IN}$ = Input voltage  
+- $f_s$ = Switching frequency
+- $\Delta I_L$ = Inductor ripple current (typically 20% to 30% of the output current)
+
+From the formula, we can deduce several important relationships. Increasing the switching frequency reduces the required inductance, allowing for a smaller inductor. Conversely, a lower output current necessitates a larger inductor to maintain stable operation. Additionally, the inductor ripple current is typically chosen to be between 20% and 30% of the output current to balance efficiency and performance.
+
+Using the following values:  
+- **Input voltage:** $V_{IN} = 4.5\text{ V} - 5\text{ V}$ (worst case: $V_{IN} = 5\text{ V}$)  
+- **Output voltage:** $V_{OUT} = 3.3\text{ V}$
+- **Switching frequency:** $f_s = 1.5\text{ MHz}$
+- **Inductor ripple current:** $\Delta I_L = 0.25 \times I_{OUT}$ (we choose 0.2, this represents the worst case scenario)  
+
+![Inductor Plot](/notes/img/plot_inductor_buck_sw.png)
+
+From the plot above we can see that for lower currents the required minimum inductance is around **70 µH** for lighte loads. Since we are choosing standard values, we can select an inductor with a value of **68 µH**.
+
+### Input & Output Capacitors Selection
+
+According to the [TLV62569 datasheet](/datasheet/tlv62569.pdf), the input capacitor must have a minimum capacitance of **4.7 µF** and the output
+capacitor must be in the range of **10 µF** to **47 µF**. We will use a **22 µF** capacitor for both the input and output capacitors, since we
+already use the same value for the analog power supply (BOM consolidation).
+
+### Feedback Network Resistor Selection
+
+To archive the desired output voltage, we need to select the feedback resistors. The output voltage is given by the formula, taken from the [TLV62569 datasheet](/datasheet/tlv62569.pdf):
+
+$$ V_{OUT} = V_{REF} \times \left(1 + \frac{R_1}{R_2}\right) = 0.6 \times \left(1 + \frac{R_1}{R_2}\right) $$
+
+where:
+- $V_{OUT}$ = Desired output voltage
+- $V_{REF}$ = Reference voltage (given with 0.6 V)
+- $R_1 \& R_2$ = Feedback resistor 1 & 2
+
+To maintain a stable output voltage, it's essential to keep the reference voltage steady. To achieve this, we will use resistors with a tolerance
+of **1% or better**. The chosen values for the feedback resistors are **R1 = 100 kΩ** and **R2 = 22 kΩ**, which will provide a stable output
+voltage of **3.3 V**, as shown in the schematic. The datasheet also recommend placing a **Do not place (DNP)** capacitor parallel to the first
+resistor to leave room for a possible compensation capacitor.
+
+### Power LED
+
+At the output of the buck converter, we have a power LED that indicates when the board is powered on. We use a green LED and a current limiting
+resistor of **1 kΩ**.
+
+
+## Bias Generator
