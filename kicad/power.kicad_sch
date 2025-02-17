@@ -906,7 +906,7 @@
 				)
 			)
 		)
-		(symbol "bias_generator_ic:MCP6001T-E_OT"
+		(symbol "bias_generator_microchip:MCP6001T-E_OT"
 			(pin_names
 				(offset 0.254)
 			)
@@ -4039,6 +4039,84 @@
 		)
 	)
 	(symbol
+		(lib_id "bias_generator_microchip:MCP6001T-E_OT")
+		(at 229.87 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8ebbe227-e375-4b74-839f-f20b6bec00c2")
+		(property "Reference" "U3"
+			(at 250.952 61.214 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "MCP6001T-E/OT"
+			(at 258.572 75.946 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "SOT-23-5_MC_MCH"
+			(at 232.918 53.086 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "MCP6001T-E/OT"
+			(at 233.934 56.134 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 229.87 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "4"
+			(uuid "23afb96d-226e-4aab-9a8b-c3fcaa255c46")
+		)
+		(pin "5"
+			(uuid "239b32a4-f8e5-4014-b817-eb04d0204d7e")
+		)
+		(pin "2"
+			(uuid "92b6b759-fe05-41e9-a79b-3c926fa024d9")
+		)
+		(pin "1"
+			(uuid "52067db6-be18-408e-b7c3-c1e6dae4da10")
+		)
+		(pin "3"
+			(uuid "24eb5ebe-a3a0-408a-9c82-02b478d516f0")
+		)
+		(instances
+			(project ""
+				(path "/eba96202-8ea2-41d9-8d7a-700a4166585a/9e6a3319-b22e-494d-bd14-b1d6263414e0"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 214.63 73.66 0)
 		(unit 1)
@@ -5044,84 +5122,6 @@
 			(project ""
 				(path "/eba96202-8ea2-41d9-8d7a-700a4166585a/9e6a3319-b22e-494d-bd14-b1d6263414e0"
 					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "bias_generator_ic:MCP6001T-E_OT")
-		(at 229.87 63.5 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ecb97bec-229f-428c-b5c8-c4d85013eb7b")
-		(property "Reference" "U3"
-			(at 256.032 73.152 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MCP6001T-E/OT"
-			(at 256.794 75.438 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "SOT-23-5_MC_MCH"
-			(at 232.918 53.086 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "MCP6001T-E/OT"
-			(at 233.934 56.134 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 229.87 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "5"
-			(uuid "25cb56d0-918c-412e-9a8a-690ef155c814")
-		)
-		(pin "4"
-			(uuid "5c56034c-bec7-40ab-8dfd-d94a813b8251")
-		)
-		(pin "3"
-			(uuid "63c62eff-c016-4ded-802c-bf18388b62af")
-		)
-		(pin "1"
-			(uuid "46b8105c-8a01-47e4-aad8-4bead2d22e34")
-		)
-		(pin "2"
-			(uuid "d036b990-2a9c-4dac-8928-26e7f59dd1c3")
-		)
-		(instances
-			(project ""
-				(path "/eba96202-8ea2-41d9-8d7a-700a4166585a/9e6a3319-b22e-494d-bd14-b1d6263414e0"
-					(reference "U3")
 					(unit 1)
 				)
 			)

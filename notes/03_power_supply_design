@@ -125,8 +125,31 @@ resistor to leave room for a possible compensation capacitor.
 
 ### Power LED
 
-At the output of the buck converter, we have a power LED that indicates when the board is powered on. We use a green LED and a current limiting
-resistor of **1 kΩ**.
+At the output of the buck converter, we have a power LED that indicates when the board is powered on. For a debug LED like this, we aim for a
+current of **2 mA**, which is sufficient to provide a visible indication without consuming excessive power. The required forward voltage of the
+LED for the desired current is roughly **2.8 V**, see the graph below.
 
+![LED Voltage Plot](/notes/img/led_voltage.png)
+
+To calculate the resistor value, we use Ohm's Law:
+
+$$ R = \frac{V_{OUT} - V_{LED}}{I} = \frac{3.3 V - 2.8 V}{2 mA} = 250 \Omega $$
+
+For this particular case, we will use a **1 kΩ** resistor, which is a standard value that provides an even lower current of **0.5 mA**. This
 
 ## Bias Generator
+
+We are operating the analog components with a **3.3V** supply and ground, but the OpAmps do not perform well with a single supply. To address this, we create a reference voltage at half the supply voltage. This is achieved using a voltage divider, a simple circuit that splits the input voltage into two equal parts with two identical **1 kΩ** resistors. To further enhance the stability of the voltage, a **22 µF** capacitor is added in parallel with the second resistor, effectively filtering out any noise present in the supply voltage. With this setup, the biased voltage will oscillate between **0V** and **3.3V** around the **1.65V** reference voltage.
+
+The bias generator is configured in an OpAmp follower (buffer) arrangement, meaning that the output voltage will follow the input voltage. This behavior stems from the ideal properties of the OpAmp:
+
+- $V_+ = V_-$ (the non-inverting and inverting inputs are equal)
+- Infinite input impedance
+- Zero output impedance
+
+The OpAmp follower provides several advantages:
+- Stable bias voltage
+- Strong filtering of the bias voltage, reducing noise from the power supply
+- High input impedance and low output impedance
+
+Additionally, a decoupling capacitor of **100nF** is placed close to the OpAmp’s power supply pins. This capacitor acts as a local low-impedance energy reservoir, helping to prevent voltage dips during current spikes. It ensures the OpAmp operates reliably by stabilizing the power supply.
