@@ -1,3 +1,7 @@
 (sym_lib_table
   (version 7)
+  (lib (name "CMF3216F-900-2P-T")(type "KiCad")(uri "${KIPRJMOD}/library/CMF3216F-900-2P-T.kicad_sym")(options "")(descr ""))
+  (lib (name "LED_RGB")(type "KiCad")(uri "${KIPRJMOD}/library/LED_RGB.kicad_sym")(options "")(descr ""))
+  (lib (name "SWD_Connector")(type "KiCad")(uri "${KIPRJMOD}/library/SWD_Connector.kicad_sym")(options "")(descr ""))
+  (lib (name "USBLC6-2SC6")(type "KiCad")(uri "${KIPRJMOD}/library/USBLC6-2SC6.kicad_sym")(options "")(descr ""))
 )
