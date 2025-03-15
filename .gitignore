@@ -1,5 +1,6 @@
-# Ignore backup folder
+# Ignore backups and savefiles
 */mixed_signal_hardware_design-backups
+/kicad/#auto_saved_files#
 
-# Ignore MacOS .DS_Store 
+# Ignore .DS_Store file
 .DS_Store
