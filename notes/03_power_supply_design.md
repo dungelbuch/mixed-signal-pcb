@@ -9,6 +9,10 @@ supply for the biasing circuit.
 The following sections will describe the design considerations for the placements and values of the secondary components
 of the power supply.
 
+
+![PSU Schematic](/notes/img/psu_schematic.png)
+
+
 ## Input Filter
 
 The inductor has a DC current rating of 500 mA, which matches the maximum current that a USB connection can provide. It is important to specify an inductor with a higher current rating than the expected operating current to ensure reliability and minimize saturation effects. Although the inductor will typically draw much less current (100 mA – 200 mA) during normal operation, the higher rating provides a safety margin, ensuring stable performance under varying load conditions.

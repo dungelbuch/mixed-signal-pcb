@@ -1,5 +1,7 @@
 # MCU and USB Design
 
+![PSU and USB Schematic](/notes/img/mcu_usb_schematic.png)
+
 ## STM32F103C8T6 Microcontroller
 
 ### Power Pins
@@ -18,7 +20,6 @@ this pin.
   high it will listen for debug signals on various ports.
 - **HSE_IN & HSE_OUT**: External high-speed clock input and output pins. Wee will rely on external clock source for the microcontroller, since they are
   more accurate and stable than the internal RC oscillator.
-
 
 ### High-Speed External Clock
 
