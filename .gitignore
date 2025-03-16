@@ -1,6 +1,8 @@
 # Ignore backups and savefiles
 */mixed_signal_hardware_design-backups
 /kicad/#auto_saved_files#
+/kicad/_autosave*
+/kicad/*.lck
 
 # Ignore .DS_Store file
 .DS_Store
