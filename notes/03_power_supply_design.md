@@ -10,7 +10,7 @@ The following sections will describe the design considerations for the placement
 of the power supply.
 
 
-![PSU Schematic](/notes/img/psu_schematic.png)
+![PSU Schematic](/notes/img/analog_digital_psu.png)
 
 
 ## Input Filter
@@ -142,6 +142,8 @@ $$ R = \frac{V_{OUT} - V_{LED}}{I} = \frac{3.3 V - 2.8 V}{2 mA} = 250 \Omega $$
 For this particular case, we will use a **1 kΩ** resistor, which is a standard value that provides an even lower current of **0.5 mA**. This
 
 ## Bias Generator
+
+![Bias Generator](/notes/img/bias_generator.png)
 
 We are operating the analog components with a **3.3V** supply and ground, but the OpAmps do not perform well with a single supply. To address this, we create a reference voltage at half the supply voltage. This is achieved using a voltage divider, a simple circuit that splits the input voltage into two equal parts with two identical **1 kΩ** resistors. To further enhance the stability of the voltage, a **22 µF** capacitor is added in parallel with the second resistor, effectively filtering out any noise present in the supply voltage. With this setup, the biased voltage will oscillate between **0V** and **3.3V** around the **1.65V** reference voltage.
 

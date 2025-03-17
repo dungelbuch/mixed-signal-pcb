@@ -1,6 +1,6 @@
 # DAC & Analog Circuitry
 
-![DAC7563](/notes/img/dac_circuitry.png)
+![DAC7563](/notes/img/dac_schematic.png)
 
 ## Digital-to-Analog Converter
 The DAC used in this design is the DAC7563 from Texas Instruments, a 12-bit digital-to-analog converter with an internal 2.5V reference voltage. It operates within a 2.7V to 5.5V power supply range, making it fully compatible with the 3.3V digital power supply used in this design.

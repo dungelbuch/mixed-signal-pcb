@@ -3,9 +3,9 @@
 The following sections will cover the analog-to-digital converter (ADC), and its analog-front-end (AFE) circuitry. It also has a differential
 input stage, which is used to measure the differential voltage between two input signals. Although we will be using the ADC in single-ended mode.
 
-![ADC Schematic](/notes/img/adc_dac_analog_front_end.png)
-
 ## Analog-to-Digital Converter
+
+![ADC IC](/notes/img/adc_schematic.png)
 
 The chosen ADC for this design is the ADC141S626 from Texas Instruments. This is a 14-bit ADC with a variable sampling rate that can range from 50 kSPS to 250 kSPS.
 
@@ -28,6 +28,8 @@ mitigate electromagnetic interference (EMI). This resistor helps to maintain sig
 
 ## Analog Front-End
 
+![ADC Front-End](/notes/img/analog_front_end.png)
+
 The Analog Front-End (AFE) is designed to provide impedance conversion and an anti-aliasing filter for the ADC. The ADC itself has a relatively
 low input impedance (typically a few kΩ), but to avoid loading the signal source, we require a much higher input impedance in the AFE.
 
@@ -42,16 +44,16 @@ and a 150pF capacitor is used. This combination creates a low-pass filter with a
 signal frequencies are passed to the ADC.
 
 This AFE design is not suitable for DC measurements because we are running on a single supply and biasing the operational amplifier (op-amp) to
-half of the supply voltage. To prevent any DC bias on the input from interfering with the op-amp's input bias, an AC coupling capacitor (C32,
+half of the supply voltage. To prevent any DC bias on the input from interfering with the op-amp's input bias, an AC coupling capacitor (C404,
 100nF) is included. Without this capacitor, any DC component on the input could negatively affect the op-amp's operating point.
 
-The input impedance of the op-amp is defined by resistors R23 and R25, each valued at 2.2MΩ. At AC, the C32 capacitor acts as a short circuit,
+The input impedance of the op-amp is defined by resistors R401 and R407, each valued at 2.2MΩ. At AC, the C404 capacitor acts as a short circuit,
 and the two resistors combine to provide a 1.1MΩ AC input impedance. The bias voltage for the op-amp is supplied by a bias voltage generator
-(VCOM) and is connected to R23. Due to the high resistance, no significant current flows, ensuring a stable bias voltage. Furthermore, the
-configuration of C32, R23, and R25 forms a high-pass filter with a cutoff frequency of 1.4Hz. This allows for accurate measurements down to
+(VCOM) and is connected to R401. Due to the high resistance, no significant current flows, ensuring a stable bias voltage. Furthermore, the
+configuration of C404, R401, and R407 forms a high-pass filter with a cutoff frequency of 1.4Hz. This allows for accurate measurements down to
 approximately 2Hz without significant attenuation.
 
-The first op-amp (U8) is configured as a voltage follower, which provides a high input impedance and low output impedance. This configuration
+The first op-amp (U401) is configured as a voltage follower, which provides a high input impedance and low output impedance. This configuration
 serves as a buffer between the input signal and the anti-aliasing filter, preventing any loading effects that could distort the signal. The
 anti-aliasing filter is designed as a Sallen-Key low-pass filter and, in this case, is a 3rd-order Butterworth filter. The filter has a cutoff
 frequency of 25kHz to ensure that the upper frequency limit of the range of interest (20kHz) is not attenuated significantly. This ensures the
@@ -61,22 +63,16 @@ ADC can sample signals accurately without distortion at the frequencies of inter
 
 ![ADC Analog Front-End 2nd Stage](/notes/img/analog_front_end_2nd_stage.png)
 
-This filter is an active filter since it involves an active component, which is the 2nd op-amp (U9). If we only use passive components, we will
-have problems with impedences, changing in various frequencies and various loading effects. With a buffer we are able to maintain a accurate
-frequency response across a variety of inputs and load conditions. The order of the filter is determined by the number of capacitors used in the
-circuit (C34, C35 and C36). Choosing the values for capacitors and resistors can be done using design tools, such as this [online
-tool](http://sim.okawa-denshi.jp/en/Fkeisan.htm).
-
 The filter is active because it involves an active component—the second op-amp (U9). If only passive components were used, impedance variations
 at different frequencies and loading effects could result in a degraded frequency response. The active op-amp helps to maintain a stable and
 accurate frequency response regardless of input conditions and load variations. The order of the filter is determined by the number of capacitors
-in the circuit, namely C34, C35, and C36. The filter’s design can be optimized by selecting appropriate values for capacitors and resistors.
+in the circuit, namely C401, C406, and C407. The filter’s design can be optimized by selecting appropriate values for capacitors and resistors.
 Tools such as this [online filter calculator](http://sim.okawa-denshi.jp/en/Fkeisan.htm) can assist in choosing the correct component values.
 
 Using the ADC in differential input mode would be advantageous if we were dealing with a differential signal, as it would improve the
 signal-to-noise ratio (SNR). However, in this design, we are using the ADC in single-ended mode, which is sufficient for our needs, as we are
-targeting a low-precision instrument. At the output of the second stage, we place a feed resistor (R29, 1kΩ). This ensures that, in the event of
-a short circuit at the output, the op-amp will not be damaged. Additionally, we include a capacitor (C38, 150pF), which, in combination with the
+targeting a low-precision instrument. At the output of the second stage, we place a feed resistor (R406, 1kΩ). This ensures that, in the event of
+a short circuit at the output, the op-amp will not be damaged. Additionally, we include a capacitor (C408, 150pF), which, in combination with the
 feed resistor, forms another low-pass filter to further reduce high-frequency noise. Before the signal is fed into the ADC, we perform a
 'balanced' conversion to ensure that both ADC inputs are at the same voltage level. This "balanced" conversion means that both inputs are driven
 by equal resistances. Specifically, ADC_IN+ will oscillate around VCOM, while ADC_IN- remains fixed at VCOM. This process effectively transforms

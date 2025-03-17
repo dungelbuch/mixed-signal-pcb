@@ -1,8 +1,8 @@
 # MCU and USB Design
 
-![PSU and USB Schematic](/notes/img/mcu_usb_schematic.png)
-
 ## STM32F103C8T6 Microcontroller
+
+![MCU](/notes/img/mcu_schematic.png)
 
 ### Power Pins
 
@@ -65,6 +65,8 @@ Where these pins needs to be connected o can be found using the STM32CudeIDE, wh
 
 ## USB Connector
 
+![USB](/notes/img/usb_connector.png)
+
 ### USB Type C Connector
 
 The MCU requires a 1.5k pull-up resistor on the D+ line of the USB connector. The D- line is connected to the data lines of the USB connector.
@@ -79,6 +81,8 @@ USSBLC6-2SC6 ESD protection diode. The diode is connected between the D+ and D- 
 0.6 pF and a low clamping voltage of 6V. The diode is connected to the 3.3V digital power supply. and the common mode choke.
 
 ## Serial Wire Debug
+
+![SWD](/notes/img/swd_connector.png)
 
 The SWD (Serial Wire Debug) is an in-circuit debugging and programming protocol, similar to JTAG. It consists of the SWDIO and SWCLK signals. The SWDIO is a bidirectional data line used for communication, while the SWCLK is a clock signal that synchronizes data transfer. Additionally, the SWO pin is used for real-time debugging, allowing variable monitoring, and the NRST pin is used to reset the microcontroller.
 
